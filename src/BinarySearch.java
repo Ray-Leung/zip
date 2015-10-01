@@ -16,12 +16,19 @@ public class BinarySearch {
         if(input.length() == 5) {
         long startTime = System.currentTimeMillis();
         int i =   Arrays.binarySearch(place,placeT);
-
-        long endTime   = System.currentTimeMillis();
-        long totalTime = endTime - startTime;
-        result = place[i].toString();
-        System.out.println(totalTime);
+            if(i < 0) {
+                result = "this zip code do not exist.";
+            }
+            else {
+                result = place[i].toString();
+            }
+            long endTime   = System.currentTimeMillis();
+            long totalTime = endTime - startTime;
+            System.out.println(totalTime);
     }
+        else {
+            result = "this zip code is invalid";
+        }
 
         return result;
     }
